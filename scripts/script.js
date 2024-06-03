@@ -32,3 +32,5 @@ function handleProfileFormSubmit(evt) {
 }
 
 formElement.addEventListener("submit", handleProfileFormSubmit);
+
+formElement.addEventListener("submit", closePopup);

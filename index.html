@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Vinicius Brino Cardoso" />
+    <meta name="description" content="Ao Redor dos EUA" />
+    <meta name="keywords" content="rede social, viagem, paisagem, fotos" />
+    <title>Ao Redor dos EUA</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img
+          src="images/header__logo.svg"
+          alt="logotipo da página"
+          class="header__logo"
+        />
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img
+            src="images/Avatar.png"
+            alt="foto do perfil do usuário"
+            class="profile__img"
+          />
+          <div class="profile__info">
+            <h1 class="profile__name">Jacques Cousteau</h1>
+            <p class="profile__about">Explorador</p>
+            <button class="profile__edit">
+              <img
+                src="images/button_edit.svg"
+                alt=""
+                class="profile__edit-btn"
+              />
+            </button>
+          </div>
+          <button class="profile__add">
+            <img src="images/button_add.svg" alt="" class="profile__add-btn" />
+          </button>
+        </section>
+
+        <div class="popup" id="editProfilePopup">
+          <div class="popup__content">
+            <h2 class="popup__title">Editar perfil</h2>
+            <form class="popup__form">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="popup__input"
+                placeholder="Nome"
+                required
+              />
+
+              <input
+                type="text"
+                id="about"
+                name="about"
+                class="popup__input"
+                placeholder="Sobre mim"
+                required
+              />
+
+              <button type="submit" class="popup__save-button">Salvar</button>
+            </form>
+            <button class="popup__close-button" id="closePopupButton">
+              <img
+                class="popup__close-button_img"
+                src="images/Close_icon.svg"
+                alt="icone de fechar janela"
+              />
+            </button>
+          </div>
+        </div>
+
+        <section class="elements">
+          <div class="elements__post">
+            <img
+              src="images/photo1.jpg"
+              alt="vale com um rio passando ao meio e árvores ao redor"
+              class="elements__photo"
+            />
+            <div class="elements__container">
+              <h2 class="elements__text">Vale de Yosemite</h2>
+              <button class="elements__button">
+                <img
+                  src="images/button_like.svg"
+                  alt=""
+                  class="elements__like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="elements__post">
+            <img
+              src="images/photo2.jpg"
+              alt="lago com montanhas ao fundo"
+              class="elements__photo"
+            />
+            <div class="elements__container">
+              <h2 class="elements__text">Lago Louise</h2>
+              <button class="elements__button">
+                <img
+                  src="images/button_like.svg"
+                  alt=""
+                  class="elements__like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="elements__post">
+            <img
+              src="images/photo3.jpg"
+              alt="topo das montanhas com sol iluminando ao fundo"
+              class="elements__photo"
+            />
+            <div class="elements__container">
+              <h2 class="elements__text">Montanhas</h2>
+              <button class="elements__button">
+                <img
+                  src="images/button_like.svg"
+                  alt=""
+                  class="elements__like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="elements__post">
+            <img
+              src="images/photo4.jpg"
+              alt="imagem noturna da montanha de Latemar"
+              class="elements__photo"
+            />
+            <div class="elements__container">
+              <h2 class="elements__text">Latemar</h2>
+              <button class="elements__button">
+                <img
+                  src="images/button_like.svg"
+                  alt=""
+                  class="elements__like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="elements__post">
+            <img
+              src="images/photo5.jpg"
+              alt="lago em Vanoise National Park com montanhas de fundo"
+              class="elements__photo"
+            />
+            <div class="elements__container">
+              <h2 class="elements__text">Vanoise National Park</h2>
+              <button class="elements__button">
+                <img
+                  src="images/button_like.svg"
+                  alt=""
+                  class="elements__like"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="elements__post">
+            <img
+              src="images/photo6.jpg"
+              alt="pequenos barcos amarrados à um pier de madeira no Lago Di Braies com montanhas nevadas ao fundo"
+              class="elements__photo"
+            />
+            <div class="elements__container">
+              <h2 class="elements__text">Lago Di Braies</h2>
+              <button class="elements__button">
+                <img
+                  src="images/button_like.svg"
+                  alt=""
+                  class="elements__like"
+                />
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">© 2021 Around The U.S.</p>
+      </footer>
+    </div>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

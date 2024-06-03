@@ -1,0 +1,77 @@
+.elements {
+  max-width: 880px;
+  margin: 0 auto 67px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 17px;
+}
+
+.elements__post {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 282px;
+}
+
+.elements__photo {
+  max-width: 282px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.elements__photo:hover {
+  opacity: 0.5;
+}
+
+.elements__container {
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  max-width: 282px;
+  max-height: 79px;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 15px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.elements__text {
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 220px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.elements__button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.elements__like:hover {
+  opacity: 0.5;
+}
+
+.elements__like:checked {
+  color: #000;
+}
+
+@media screen and (max-width: 950px) {
+  .elements {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 581px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .elements {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 282px;
+    margin-bottom: 50px;
+  }
+}

@@ -57,10 +57,6 @@
   opacity: 0.5;
 }
 
-.elements__like:checked {
-  color: #000;
-}
-
 @media screen and (max-width: 950px) {
   .elements {
     grid-template-columns: repeat(2, 1fr);

@@ -37,7 +37,11 @@
             </button>
           </div>
           <button class="profile__add">
-            <img src="images/button_add.svg" alt="" class="profile__add-btn" />
+            <img
+              src="images/button_add.svg"
+              alt="ícone de adicionar post"
+              class="profile__add-btn"
+            />
           </button>
         </section>
 
@@ -73,109 +77,69 @@
           </div>
         </div>
 
+        <div class="popup" id="addPostPopup">
+          <div class="popup__content">
+            <h2 class="popup__title">Novo local</h2>
+            <form class="popup__form" id="addPostForm">
+              <input
+                type="text"
+                id="title"
+                name="title"
+                class="popup__input"
+                placeholder="Título"
+                required
+              />
+              <input
+                type="text"
+                id="image-link"
+                name="link"
+                class="popup__input"
+                placeholder="Link da imagem"
+                required
+              />
+              <button type="submit" class="popup__save-button">Criar</button>
+            </form>
+            <button class="popup__button" id="CloseAddPopup">
+              <img
+                class="popup__close-button"
+                src="images/Close_icon.svg"
+                alt="icone de fechar janela"
+              />
+            </button>
+          </div>
+        </div>
+
         <section class="elements">
-          <div class="elements__post">
-            <img
-              src="images/photo1.jpg"
-              alt="vale com um rio passando ao meio e árvores ao redor"
-              class="elements__photo"
-            />
-            <div class="elements__container">
-              <h2 class="elements__text">Vale de Yosemite</h2>
-              <button class="elements__button">
-                <img
-                  src="images/button_like.svg"
-                  alt=""
-                  class="elements__like"
-                />
-              </button>
-            </div>
+          <div class="popup__image popup" id="PopupImage">
+            <button class="popup__button" id="CloseImagePopup">
+              <img
+                class="popup__close-button"
+                src="images/Close_icon.svg"
+                alt="icone de fechar janela"
+              />
+            </button>
+            <img src="" alt="imagem ampliada" class="popup__image_l" />
+            <p class="popup__paragraph"></p>
           </div>
-          <div class="elements__post">
-            <img
-              src="images/photo2.jpg"
-              alt="lago com montanhas ao fundo"
-              class="elements__photo"
-            />
-            <div class="elements__container">
-              <h2 class="elements__text">Lago Louise</h2>
+
+          <template id="template-elements">
+            <div class="elements__post">
               <button class="elements__button">
-                <img
-                  src="images/button_like.svg"
-                  alt=""
-                  class="elements__like"
-                />
+                <img src="images/Trash.svg" alt="" class="elements__del" />
               </button>
+              <img class="elements__photo" />
+              <div class="elements__container">
+                <h2 class="elements__text"></h2>
+                <button class="elements__button">
+                  <img
+                    src="images/button_like.svg"
+                    alt=""
+                    class="elements__like"
+                  />
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="elements__post">
-            <img
-              src="images/photo3.jpg"
-              alt="topo das montanhas com sol iluminando ao fundo"
-              class="elements__photo"
-            />
-            <div class="elements__container">
-              <h2 class="elements__text">Montanhas</h2>
-              <button class="elements__button">
-                <img
-                  src="images/button_like.svg"
-                  alt=""
-                  class="elements__like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__post">
-            <img
-              src="images/photo4.jpg"
-              alt="imagem noturna da montanha de Latemar"
-              class="elements__photo"
-            />
-            <div class="elements__container">
-              <h2 class="elements__text">Latemar</h2>
-              <button class="elements__button">
-                <img
-                  src="images/button_like.svg"
-                  alt=""
-                  class="elements__like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__post">
-            <img
-              src="images/photo5.jpg"
-              alt="lago em Vanoise National Park com montanhas de fundo"
-              class="elements__photo"
-            />
-            <div class="elements__container">
-              <h2 class="elements__text">Vanoise National Park</h2>
-              <button class="elements__button">
-                <img
-                  src="images/button_like.svg"
-                  alt=""
-                  class="elements__like"
-                />
-              </button>
-            </div>
-          </div>
-          <div class="elements__post">
-            <img
-              src="images/photo6.jpg"
-              alt="pequenos barcos amarrados à um pier de madeira no Lago Di Braies com montanhas nevadas ao fundo"
-              class="elements__photo"
-            />
-            <div class="elements__container">
-              <h2 class="elements__text">Lago Di Braies</h2>
-              <button class="elements__button">
-                <img
-                  src="images/button_like.svg"
-                  alt=""
-                  class="elements__like"
-                />
-              </button>
-            </div>
-          </div>
+          </template>
         </section>
       </main>
       <footer class="footer">

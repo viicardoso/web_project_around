@@ -15,8 +15,12 @@
 
 .elements__photo {
   max-width: 282px;
+  max-height: 282px;
+  height: 100%;
   width: 100%;
   cursor: pointer;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .elements__photo:hover {
@@ -51,6 +55,22 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.elements__del {
+  position: relative;
+  top: 40px;
+  left: 120px;
+  z-index: 1;
+}
+
+.elements__like_active {
+  opacity: 1;
+  background-image: url("../images/like-active.svg");
+}
+
+.elements__del:hover {
+  opacity: 0.5;
 }
 
 .elements__like:hover {

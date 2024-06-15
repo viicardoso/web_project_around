@@ -1,6 +1,6 @@
 # Ao Redor dos EUA
 
-Projeto do sprint 7, parte inicial de uma rede social. Nela temos uma parte superior mostrando o perfil do usuário e suas postagens abaixo. Nesse projeto fizemos uso pela primeira vez de javascript, onde, ao clicar no botão de "editar perfil", uma janela popup se abre com um formulário que pode ser preenchido.
+Projeto do sprint 8, continuação do projeto anterior. Foram adicionados mais algumas interatividades, como um popup para adicionar novas fotos e legenda, abrir a imagem em forma de popup e também botões para excluir as fotos, por fim, no botão de curtir também foi adicionado a função de preenche-lo ao clicar e voltar ao estado padrão clicando novamente.
 
 ## Recursos do projeto
 

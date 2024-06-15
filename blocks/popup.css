@@ -8,7 +8,29 @@
   align-items: center;
   width: 430px;
   height: 330px;
-  z-index: 1;
+  z-index: 2;
+}
+
+.popup__image_opened {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+}
+
+.popup__image_l {
+  max-width: 75vw;
+  max-height: 75vh;
+  width: 100%;
+  height: 100%;
+}
+
+.popup__paragraph {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  margin: 0;
 }
 
 .popup_opened {
@@ -113,5 +135,9 @@
     left: 250px;
     width: 26px;
     height: 26px;
+  }
+
+  .popup__paragraph {
+    left: 20px;
   }
 }

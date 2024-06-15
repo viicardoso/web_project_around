@@ -167,7 +167,6 @@ const closePopupImage = document.querySelector("#CloseImagePopup");
 //funções open image
 
 function openImage(evt) {
-  console.log(evt);
   const card = evt.target.offsetParent;
   const image = card.querySelector(".elements__photo");
   const paragraph = card.querySelector(".elements__text");

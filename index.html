@@ -31,7 +31,7 @@
             <button class="profile__edit">
               <img
                 src="images/button_edit.svg"
-                alt=""
+                alt="icone de editar perfil"
                 class="profile__edit-btn"
               />
             </button>
@@ -110,22 +110,28 @@
         </div>
 
         <div class="popup" id="PopupImage">
-          <button class="popup__button" id="CloseImagePopup">
-            <img
-              class="popup__close-button"
-              src="images/Close_icon.svg"
-              alt="icone de fechar janela"
-            />
-          </button>
-          <img alt="imagem ampliada" class="popup__image" />
-          <p class="popup__paragraph"></p>
+          <div class="popup__content-image">
+            <button class="popup__button-image" id="CloseImagePopup">
+              <img
+                class="popup__close-button"
+                src="images/Close_icon.svg"
+                alt="icone de fechar janela"
+              />
+            </button>
+            <img alt="imagem ampliada" class="popup__image" />
+            <p class="popup__paragraph"></p>
+          </div>
         </div>
 
         <section class="elements">
           <template id="template-elements">
             <div class="elements__post">
               <button class="elements__button">
-                <img src="images/Trash.svg" alt="" class="elements__del" />
+                <img
+                  src="images/Trash.svg"
+                  alt="icone de lixeira para excluir postagens"
+                  class="elements__del"
+                />
               </button>
               <img class="elements__photo" />
               <div class="elements__container">
@@ -133,7 +139,7 @@
                 <button class="elements__button">
                   <img
                     src="images/button_like.svg"
-                    alt=""
+                    alt="icone de coração para curtir as postagens"
                     class="elements__like"
                   />
                 </button>
@@ -146,6 +152,6 @@
         <p class="footer__copyright">© 2021 Around The U.S.</p>
       </footer>
     </div>
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

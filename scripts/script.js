@@ -159,7 +159,7 @@ initialCards.forEach(addElements);
 
 //open image
 
-const popupImage = document.querySelector(".popup__image-button");
+const popupImage = document.querySelector(".popup__image");
 const popupParagraph = document.querySelector(".popup__paragraph");
 const openPopupImage = document.querySelector("#PopupImage");
 const closePopupImage = document.querySelector("#CloseImagePopup");

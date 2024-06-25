@@ -21,7 +21,7 @@ popupClose.addEventListener("click", closePopup);
 
 //formulário edit profile
 
-const formElement = document.querySelector(".popup__form");
+const addProfile = document.querySelector("#addProfile");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -41,7 +41,7 @@ function handleProfileFormSubmit(evt) {
   closePopup();
 }
 
-formElement.addEventListener("submit", handleProfileFormSubmit);
+addProfile.addEventListener("submit", handleProfileFormSubmit);
 
 //botao add post
 
@@ -183,3 +183,73 @@ function closeImage() {
 //eventos open image
 
 closePopupImage.addEventListener("click", closeImage);
+
+//close popup click fora
+
+popupOpen.addEventListener("click", function (evt) {
+  if (evt.target === popupOpen) {
+    closePopup();
+  }
+});
+
+addPostPopup.addEventListener("click", function (evt) {
+  if (evt.target === addPostPopup) {
+    closeAddPost();
+  }
+});
+
+openPopupImage.addEventListener("click", function (evt) {
+  if (evt.target === openPopupImage) {
+    closeImage();
+  }
+});
+
+//esc close popup
+
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".popup_opened");
+    const openedImage = document.querySelector(".popup__image_opened");
+    if (openedPopup || openedImage) {
+      closePopup(openedPopup);
+      closeAddPost(openedPopup);
+      closeImage(openedImage);
+    }
+  }
+});
+
+//validação de formulários
+
+const formElement = document.querySelectorAll(".popup__form");
+
+formElement.forEach(function (formElement) {
+  const formInput = formElement.querySelectorAll(".popup__input");
+
+  const showInputError = (element) => {
+    element.classList.add("popup__input_type_error");
+  };
+
+  const hideInputError = (element) => {
+    element.classList.remove("popup__input_type_error");
+  };
+
+  const isValid = (formInput) => {
+    if (!formInput.validity.valid) {
+      showInputError(formInput);
+    } else {
+      hideInputError(formInput);
+    }
+  };
+
+  formElement.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+  });
+
+  formInput.forEach(function (formInput) {
+    formElement.addEventListener("input", function () {
+      isValid(formInput);
+    });
+  });
+});
+
+//

@@ -48,21 +48,26 @@
         <div class="popup" id="editProfilePopup">
           <div class="popup__content">
             <h2 class="popup__title">Editar perfil</h2>
-            <form class="popup__form">
+            <form class="popup__form" id="addProfile">
               <input
                 type="text"
                 id="name"
                 name="name"
                 class="popup__input"
                 placeholder="Nome"
+                minlength="2"
+                maxlength="40"
                 required
               />
+
               <input
                 type="text"
                 id="about"
                 name="about"
                 class="popup__input"
                 placeholder="Sobre mim"
+                minlength="2"
+                maxlength="200"
                 required
               />
               <button type="submit" class="popup__save-button">Salvar</button>
@@ -87,10 +92,12 @@
                 name="title"
                 class="popup__input"
                 placeholder="Título"
+                minlength="2"
+                maxlength="30"
                 required
               />
               <input
-                type="text"
+                type="url"
                 id="image-link"
                 name="link"
                 class="popup__input"

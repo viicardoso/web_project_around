@@ -1,12 +1,13 @@
 # Ao Redor dos EUA
 
-Projeto do sprint 8, continuação do projeto anterior. Foram adicionados mais algumas interatividades, como um popup para adicionar novas fotos e legenda, abrir a imagem em forma de popup e também botões para excluir as fotos, por fim, no botão de curtir também foi adicionado a função de preenche-lo ao clicar e voltar ao estado padrão clicando novamente.
+Projeto do sprint 9, continuação do projeto anterior. Nessa parte do projeto adicionamos a validação dos formulários usando HTML e javaScript, além de outras atualizações, como fechar os popups ao clicar fora deles e ao pressionar a tecla ESC.
 
 ## Recursos do projeto
 
 - HTML
 - CSS
 - javaScript
+- DOM
 - git e github
 - Design Web Adaptativo
 - Figma

@@ -74,6 +74,6 @@ enableValidation({
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__save-button",
   inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
+  inputErrorClass: "popup__form_type_error",
   errorClass: "popup__error_visible",
 });

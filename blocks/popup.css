@@ -121,7 +121,7 @@
   width: 100%;
 }
 
-.popup__form_type_error {
+.popup__error {
   margin: 0;
   font-size: 12px;
   color: red;

@@ -122,14 +122,11 @@
 }
 
 .popup__input_type_error {
-  border-bottom-color: red;
-}
-
-.popup__input_type_error {
   margin: 0;
   font-size: 12px;
   color: red;
   transition: 0.3s;
+  border-bottom-color: red;
 }
 
 .popup__button_disabled {

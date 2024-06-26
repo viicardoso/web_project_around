@@ -220,36 +220,34 @@ document.addEventListener("keydown", function (evt) {
 
 //validação de formulários
 
-const formElement = document.querySelectorAll(".popup__form");
+// const formElement = document.querySelectorAll(".popup__form");
 
-formElement.forEach(function (formElement) {
-  const formInput = formElement.querySelectorAll(".popup__input");
+// formElement.forEach(function (formElement) {
+//   const formInput = formElement.querySelectorAll(".popup__input");
 
-  const showInputError = (element) => {
-    element.classList.add("popup__input_type_error");
-  };
+//   const showInputError = (element) => {
+//     element.classList.add("popup__input_type_error");
+//   };
 
-  const hideInputError = (element) => {
-    element.classList.remove("popup__input_type_error");
-  };
+//   const hideInputError = (element) => {
+//     element.classList.remove("popup__input_type_error");
+//   };
 
-  const isValid = (formInput) => {
-    if (!formInput.validity.valid) {
-      showInputError(formInput);
-    } else {
-      hideInputError(formInput);
-    }
-  };
+//   const isValid = (formInput) => {
+//     if (!formInput.validity.valid) {
+//       showInputError(formInput);
+//     } else {
+//       hideInputError(formInput);
+//     }
+//   };
 
-  formElement.addEventListener("submit", function (evt) {
-    evt.preventDefault();
-  });
+//   formElement.addEventListener("submit", function (evt) {
+//     evt.preventDefault();
+//   });
 
-  formInput.forEach(function (formInput) {
-    formElement.addEventListener("input", function () {
-      isValid(formInput);
-    });
-  });
-});
-
-//
+//   formInput.forEach(function (formInput) {
+//     formElement.addEventListener("input", function () {
+//       isValid(formInput);
+//     });
+//   });
+// });

@@ -48,7 +48,7 @@
         <div class="popup" id="editProfilePopup">
           <div class="popup__content">
             <h2 class="popup__title">Editar perfil</h2>
-            <form class="popup__form" id="addProfile">
+            <form class="popup__form" id="addProfile" novalidate>
               <input
                 type="text"
                 id="name"
@@ -59,6 +59,7 @@
                 maxlength="40"
                 required
               />
+              <span class="popup__input_type_error" id="name-error"></span>
 
               <input
                 type="text"
@@ -70,6 +71,7 @@
                 maxlength="200"
                 required
               />
+              <span class="popup__input_type_error" id="about-error"></span>
               <button type="submit" class="popup__save-button">Salvar</button>
             </form>
             <button class="popup__button" id="closePopupButton">
@@ -85,7 +87,7 @@
         <div class="popup" id="addPostPopup">
           <div class="popup__content">
             <h2 class="popup__title">Novo local</h2>
-            <form class="popup__form" id="addPostForm">
+            <form class="popup__form" id="addPostForm" novalidate>
               <input
                 type="text"
                 id="title"
@@ -96,6 +98,7 @@
                 maxlength="30"
                 required
               />
+              <span class="popup__input_type_error" id="title-error"></span>
               <input
                 type="url"
                 id="image-link"
@@ -104,6 +107,10 @@
                 placeholder="Link da imagem"
                 required
               />
+              <span
+                class="popup__input_type_error"
+                id="image-link-error"
+              ></span>
               <button type="submit" class="popup__save-button">Criar</button>
             </form>
             <button class="popup__button" id="CloseAddPopup">
@@ -159,6 +166,7 @@
         <p class="footer__copyright">© 2021 Around The U.S.</p>
       </footer>
     </div>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

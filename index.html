@@ -18,147 +18,145 @@
           class="header__logo"
         />
       </header>
-      <main class="content">
-        <section class="profile">
-          <img
-            src="images/Avatar.png"
-            alt="foto do perfil do usuário"
-            class="profile__img"
-          />
-          <div class="profile__info">
-            <h1 class="profile__name">Jacques Cousteau</h1>
-            <p class="profile__about">Explorador</p>
-            <button class="profile__edit">
-              <img
-                src="images/button_edit.svg"
-                alt="icone de editar perfil"
-                class="profile__edit-btn"
-              />
-            </button>
-          </div>
-          <button class="profile__add">
+      <section class="profile">
+        <img
+          src="images/Avatar.png"
+          alt="foto do perfil do usuário"
+          class="profile__img"
+        />
+        <div class="profile__info">
+          <h1 class="profile__name">Jacques Cousteau</h1>
+          <p class="profile__about">Explorador</p>
+          <button class="profile__edit">
             <img
-              src="images/button_add.svg"
-              alt="ícone de adicionar post"
-              class="profile__add-btn"
+              src="images/button_edit.svg"
+              alt="icone de editar perfil"
+              class="profile__edit-btn"
             />
           </button>
-        </section>
+        </div>
+        <button class="profile__add">
+          <img
+            src="images/button_add.svg"
+            alt="ícone de adicionar post"
+            class="profile__add-btn"
+          />
+        </button>
+      </section>
 
-        <div class="popup" id="editProfilePopup">
-          <div class="popup__content">
-            <h2 class="popup__title">Editar perfil</h2>
-            <form class="popup__form" id="addProfile" novalidate>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="popup__input"
-                placeholder="Nome"
-                minlength="2"
-                maxlength="40"
-                required
-              />
-              <span class="popup__error" id="name-error"></span>
+      <div class="popup" id="editProfilePopup">
+        <div class="popup__content">
+          <h2 class="popup__title">Editar perfil</h2>
+          <form class="popup__form" id="addProfile" novalidate>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="popup__input"
+              placeholder="Nome"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span class="popup__error" id="name-error"></span>
 
-              <input
-                type="text"
-                id="about"
-                name="about"
-                class="popup__input"
-                placeholder="Sobre mim"
-                minlength="2"
-                maxlength="200"
-                required
-              />
-              <span class="popup__error" id="about-error"></span>
-              <button type="submit" class="popup__save-button">Salvar</button>
-            </form>
-            <button class="popup__button" id="closePopupButton">
+            <input
+              type="text"
+              id="about"
+              name="about"
+              class="popup__input"
+              placeholder="Sobre mim"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span class="popup__error" id="about-error"></span>
+            <button type="submit" class="popup__save-button">Salvar</button>
+          </form>
+          <button class="popup__button" id="closePopupButton">
+            <img
+              class="popup__close-button"
+              src="images/Close_icon.svg"
+              alt="icone de fechar janela"
+            />
+          </button>
+        </div>
+      </div>
+
+      <div class="popup" id="addPostPopup">
+        <div class="popup__content">
+          <h2 class="popup__title">Novo local</h2>
+          <form class="popup__form" id="addPostForm" novalidate>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              class="popup__input"
+              placeholder="Título"
+              minlength="2"
+              maxlength="30"
+              required
+            />
+            <span class="popup__error" id="title-error"></span>
+            <input
+              type="url"
+              id="image-link"
+              name="link"
+              class="popup__input"
+              placeholder="Link da imagem"
+              required
+            />
+            <span class="popup__error" id="image-link-error"></span>
+            <button type="submit" class="popup__save-button">Criar</button>
+          </form>
+          <button class="popup__button" id="CloseAddPopup">
+            <img
+              class="popup__close-button"
+              src="images/Close_icon.svg"
+              alt="icone de fechar janela"
+            />
+          </button>
+        </div>
+      </div>
+
+      <div class="popup" id="PopupImage">
+        <div class="popup__content-image">
+          <button class="popup__button-image" id="CloseImagePopup">
+            <img
+              class="popup__close-button"
+              src="images/Close_icon.svg"
+              alt="icone de fechar janela"
+            />
+          </button>
+          <img alt="imagem ampliada" class="popup__image" />
+          <p class="popup__paragraph"></p>
+        </div>
+      </div>
+
+      <section class="elements">
+        <template id="template-elements">
+          <div class="elements__post">
+            <button class="elements__button">
               <img
-                class="popup__close-button"
-                src="images/Close_icon.svg"
-                alt="icone de fechar janela"
+                src="images/Trash.svg"
+                alt="icone de lixeira para excluir postagens"
+                class="elements__del"
               />
             </button>
-          </div>
-        </div>
-
-        <div class="popup" id="addPostPopup">
-          <div class="popup__content">
-            <h2 class="popup__title">Novo local</h2>
-            <form class="popup__form" id="addPostForm" novalidate>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                class="popup__input"
-                placeholder="Título"
-                minlength="2"
-                maxlength="30"
-                required
-              />
-              <span class="popup__error" id="title-error"></span>
-              <input
-                type="url"
-                id="image-link"
-                name="link"
-                class="popup__input"
-                placeholder="Link da imagem"
-                required
-              />
-              <span class="popup__error" id="image-link-error"></span>
-              <button type="submit" class="popup__save-button">Criar</button>
-            </form>
-            <button class="popup__button" id="CloseAddPopup">
-              <img
-                class="popup__close-button"
-                src="images/Close_icon.svg"
-                alt="icone de fechar janela"
-              />
-            </button>
-          </div>
-        </div>
-
-        <div class="popup" id="PopupImage">
-          <div class="popup__content-image">
-            <button class="popup__button-image" id="CloseImagePopup">
-              <img
-                class="popup__close-button"
-                src="images/Close_icon.svg"
-                alt="icone de fechar janela"
-              />
-            </button>
-            <img alt="imagem ampliada" class="popup__image" />
-            <p class="popup__paragraph"></p>
-          </div>
-        </div>
-
-        <section class="elements">
-          <template id="template-elements">
-            <div class="elements__post">
+            <img class="elements__photo" />
+            <div class="elements__container">
+              <h2 class="elements__text"></h2>
               <button class="elements__button">
                 <img
-                  src="images/Trash.svg"
-                  alt="icone de lixeira para excluir postagens"
-                  class="elements__del"
+                  src="images/button_like.svg"
+                  alt="icone de coração para curtir as postagens"
+                  class="elements__like"
                 />
               </button>
-              <img class="elements__photo" />
-              <div class="elements__container">
-                <h2 class="elements__text"></h2>
-                <button class="elements__button">
-                  <img
-                    src="images/button_like.svg"
-                    alt="icone de coração para curtir as postagens"
-                    class="elements__like"
-                  />
-                </button>
-              </div>
             </div>
-          </template>
-        </section>
-      </main>
+          </div>
+        </template>
+      </section>
       <footer class="footer">
         <p class="footer__copyright">© 2021 Around The U.S.</p>
       </footer>

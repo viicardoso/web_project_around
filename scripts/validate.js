@@ -12,17 +12,31 @@ function hideInputError(formElement, inputElement, settings) {
   errorElement.textContent = "";
 }
 
+function getErrorMessage(inputElement) {
+  if (inputElement.validity.valueMissing) {
+    return "Preencha esse campo.";
+  }
+  if (inputElement.validity.tooShort) {
+    return "Preencha esse campo.";
+  }
+  if (inputElement.validity.typeMismatch && inputElement.type === "url") {
+    return "Por favor, insira um endereço web.";
+  }
+}
+
 function checkInputValidity(formElement, inputElement, settings) {
   if (!inputElement.validity.valid) {
-    showInputError(
-      formElement,
-      inputElement,
-      inputElement.validationMessage,
-      settings
-    );
+    const errorMessage = getErrorMessage(inputElement);
+    showInputError(formElement, inputElement, errorMessage, settings);
   } else {
     hideInputError(formElement, inputElement, settings);
   }
+}
+
+function hasInvalidInput(inputList) {
+  return inputList.some((inputElement) => {
+    return !inputElement.validity.valid;
+  });
 }
 
 function hasInvalidInput(inputList) {

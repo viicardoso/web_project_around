@@ -1,12 +1,13 @@
 # Ao Redor dos EUA
 
-Projeto do sprint 9, continuação do projeto anterior. Nessa parte do projeto adicionamos a validação dos formulários usando HTML e javaScript, além de outras atualizações, como fechar os popups ao clicar fora deles e ao pressionar a tecla ESC.
+Projeto do sprint 10. Nessa etapa não foi adicionada nenhuma funcionalidade nova, mas refatoramos o código com base em javaScript modular para que ele fique mais limpo e funcional.
 
 ## Recursos do projeto
 
 - HTML
 - CSS
 - javaScript
+- javaScript modular
 - DOM
 - git e github
 - Design Web Adaptativo
@@ -16,7 +17,3 @@ Projeto do sprint 9, continuação do projeto anterior. Nessa parte do projeto a
 ## Link do projeto
 
 https://viicardoso.github.io/web_project_around/
-
-## Observações
-
-A verificação automatica da plataforma não aceita "&#169 ou &copy" por isso usei o simbolo copiado.

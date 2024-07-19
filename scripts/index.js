@@ -1,27 +1,12 @@
-//botao edit profile
+import Card from "./card.js";
 
-const editProfile = document.querySelector(".profile__edit");
-const popupOpen = document.querySelector("#editProfilePopup");
-const popupClose = document.querySelector("#closePopupButton");
+import FormValidator from "./formValidator.js";
 
-//funções edit
-
-function openPopup() {
-  popupOpen.classList.add("popup_opened");
-}
-
-function closePopup() {
-  popupOpen.classList.remove("popup_opened");
-}
-
-//eventos edit profile
-
-editProfile.addEventListener("click", openPopup);
-popupClose.addEventListener("click", closePopup);
+import { openPopup, closePopup, openAddPost, closeAddPost } from "./utils.js";
 
 //formulário edit profile
 
-const addProfile = document.querySelector("#addProfile");
+const editProfileForm = document.querySelector("#addProfile");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -39,33 +24,20 @@ function handleProfileFormSubmit(evt) {
   profileAbout.textContent = aboutValue;
 
   closePopup();
+
+  nameInput.value = "";
+  aboutInput.value = "";
+
+  const profileFormValidator = new FormValidator(
+    validationSettings,
+    editProfileForm
+  );
+  profileFormValidator.enableValidation();
 }
 
-addProfile.addEventListener("submit", handleProfileFormSubmit);
+editProfileForm.addEventListener("submit", handleProfileFormSubmit);
 
-//botao add post
-
-const addPost = document.querySelector(".profile__add");
-const addPostPopup = document.querySelector("#addPostPopup");
-const addClosePopup = document.querySelector("#CloseAddPopup");
-
-//funções add
-
-function openAddPost() {
-  addPostPopup.classList.add("popup_opened");
-}
-
-function closeAddPost() {
-  addPostPopup.classList.remove("popup_opened");
-}
-
-//eventos add post
-
-addPost.addEventListener("click", openAddPost);
-addClosePopup.addEventListener("click", closeAddPost);
-
-//formulário add post
-
+// Formulário de adicionar post
 const addPostFormElement = document.querySelector("#addPostForm");
 
 function handleAddPostFormSubmit(evt) {
@@ -77,17 +49,25 @@ function handleAddPostFormSubmit(evt) {
   const titleValue = titleInput.value;
   const linkValue = linkInput.value;
 
-  const newCard = {
+  const newCardData = {
     name: titleValue,
     link: linkValue,
   };
 
-  addElements(newCard);
+  const card = new Card(newCardData, "#template-elements");
+  const cardElement = card.generateCard();
+  document.querySelector(".elements").prepend(cardElement);
 
   titleInput.value = "";
   linkInput.value = "";
 
   closeAddPost();
+
+  const addPostFormValidator = new FormValidator(
+    validationSettings,
+    addPostFormElement
+  );
+  addPostFormValidator.enableValidation();
 }
 
 addPostFormElement.addEventListener("submit", handleAddPostFormSubmit);
@@ -121,99 +101,25 @@ const initialCards = [
   },
 ];
 
-//posts
-
-function addElements(elemento) {
-  const elementsTemplate = document.querySelector("#template-elements").content;
-  const templatePosts = elementsTemplate.cloneNode(true);
-  const elementsPhoto = templatePosts.querySelector(".elements__photo");
-  const elementsText = templatePosts.querySelector(".elements__text");
-
-  elementsPhoto.src = elemento.link;
-  elementsPhoto.alt = elemento.name;
-  elementsText.textContent = elemento.name;
-
-  elementsPhoto.addEventListener("click", (evt) => openImage(evt));
-
-  //curtir
-
-  const likeButtonActive = templatePosts.querySelector(".elements__like");
-  likeButtonActive.addEventListener("click", function (evt) {
-    evt.target.classList.toggle("elements__like_active");
-  });
-
-  //deletar
-
-  const deletePost = templatePosts.querySelector(".elements__del");
-
-  deletePost.addEventListener("click", function () {
-    const removePost = deletePost.closest(".elements__post");
-    removePost.remove();
-  });
-
-  const elementsList = document.querySelector(".elements");
-  elementsList.prepend(templatePosts);
-}
-
-initialCards.forEach(addElements);
-
-//open image
-
-const popupImage = document.querySelector(".popup__image");
-const popupParagraph = document.querySelector(".popup__paragraph");
-const openPopupImage = document.querySelector("#PopupImage");
-const closePopupImage = document.querySelector("#CloseImagePopup");
-
-//funções open image
-
-function openImage(evt) {
-  const card = evt.target.offsetParent;
-  const image = card.querySelector(".elements__photo");
-  const paragraph = card.querySelector(".elements__text");
-  popupImage.src = image.src;
-  popupImage.alt = image.alt;
-  popupParagraph.textContent = paragraph.textContent;
-  openPopupImage.classList.add("popup__image_opened");
-}
-
-function closeImage() {
-  openPopupImage.classList.remove("popup__image_opened");
-}
-
-//eventos open image
-
-closePopupImage.addEventListener("click", closeImage);
-
-//close popup click fora
-
-popupOpen.addEventListener("click", function (evt) {
-  if (evt.target === popupOpen) {
-    closePopup();
-  }
+initialCards.forEach((cardData) => {
+  const card = new Card(cardData, "#template-elements");
+  const cardElement = card.generateCard();
+  document.querySelector(".elements").prepend(cardElement);
 });
 
-addPostPopup.addEventListener("click", function (evt) {
-  if (evt.target === addPostPopup) {
-    closeAddPost();
-  }
-});
+const validationSettings = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__save-button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};
 
-openPopupImage.addEventListener("click", function (evt) {
-  if (evt.target === openPopupImage) {
-    closeImage();
-  }
-});
-
-//esc close popup
-
-document.addEventListener("keydown", function (evt) {
-  if (evt.key === "Escape") {
-    const openedPopup = document.querySelector(".popup_opened");
-    const openedImage = document.querySelector(".popup__image_opened");
-    if (openedPopup || openedImage) {
-      closePopup(openedPopup);
-      closeAddPost(openedPopup);
-      closeImage(openedImage);
-    }
-  }
+const forms = Array.from(
+  document.querySelectorAll(validationSettings.formSelector)
+);
+forms.forEach((formElement) => {
+  const validator = new FormValidator(validationSettings, formElement);
+  validator.enableValidation();
 });

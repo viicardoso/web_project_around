@@ -67,7 +67,7 @@
 }
 
 .popup__input {
-  margin: 0 0 29px;
+  margin: 0 0;
   padding: 0 0 13px;
   border: none;
   border-bottom: 1px solid #000;
@@ -122,7 +122,7 @@
 }
 
 .popup__error {
-  margin: 0;
+  margin: 0 0 20px;
   font-size: 12px;
   color: red;
   transition: 0.3s;
